@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="snap.svg-min.js"></script>
+    <title>SVG TESTS</title>
+
+    <style>
+        .layer-1 {
+            position:absolute;
+            top:0px;
+            left:0px;
+            z-index:0;
+            background:black;
+        }
+        .layer-2 {
+            position:absolute;
+            top:0px;
+            left:0px;
+            z-index:2;
+            /*background:red;*/
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var maxwidth=1000,maxheight=1000;
+            var master = Snap("#messr");
+            master.attr({width:maxwidth,height:maxheight});
+            var t = new Snap.Matrix().scale(2,1.25);
+            var s2 = Snap(maxwidth,maxheight);
+            master.append(s2);
+            Snap.load("waveform.svg", function (f) {
+                var path = f.select("path");
+                path.attr({fill:"white",opacity:0.5});
+                path.transform(t);
+                s2.append(path);
+            });
+
+            var s = Snap(maxwidth,maxheight);
+            master.append(s);
+            s.attr({width:maxwidth*0.5,height:maxheight});
+            Snap.load("waveform.svg", function (f) {
+                var path = f.select("path");
+                path.attr({fill:"white",opacity:1});
+                path.transform(t);
+                s.append(path);
+            });
+            s.animate({width:maxwidth},5000);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div align="center" style="background:black">
+        <svg id="messr">FUCK</svg>
+    </div>
+</body>
+
+
+</html>
