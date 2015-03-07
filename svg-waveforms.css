@@ -1,6 +1,28 @@
-svg {
+/*svg {
+}*/
+
+/*path {
+    fill: rgba(200,150,255,0.75);
+}
+*/
+/*.layer-1 {
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:0;
+    background:black;
+}
+.layer-2 {
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:2;
+    background:black;
 }
 
-path {
-    fill: rgba(80,150,255,0.75);
-}
+button {
+    background-color:black;
+    width:250px;
+    height:100px;
+    font-size:32px;
+}*/
